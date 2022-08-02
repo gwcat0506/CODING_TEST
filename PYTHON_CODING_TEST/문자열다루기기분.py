@@ -8,3 +8,6 @@ def solution(s):
         return True
     return False 
 
+a = '-'
+a=a.replace('-','')
+print(a)
