@@ -11,3 +11,5 @@ def solution(n, k):
 #     정렬하기
     per_list = sorted(per_list)
     return per_list[k-1]
+
+# 위의 코드는 효율성 에러가 뜬다..... 
