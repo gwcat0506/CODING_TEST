@@ -12,12 +12,12 @@ print(N)
 print(N_list)
 
 
-A = [0]*100
-def bubun(x):
+# A = [0]*100
+# def bubun(x):
     
-    for i in range(len(N_list)):
-        if A[i]!=0:
+#     for i in range(len(N_list)):
+#         if A[i]!=0:
         
     
-    return 
+#     return 
     
