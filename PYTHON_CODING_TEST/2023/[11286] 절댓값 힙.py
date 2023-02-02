@@ -23,5 +23,4 @@ for _ in range(N):
         continue
     
     heapq.heappush(priory_heap,[abs(x),x])
-    
     # print(priory_heap)
