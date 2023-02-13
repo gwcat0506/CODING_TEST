@@ -8,7 +8,7 @@ def check_gems(dic):
 
 def solution(gems):
 #     전체 보석의 종류 수 cnt
-    gem_cnt = set(gems)
+    gem_gcnt = set(gems)
     p1 = 0
     p2 = 0
     
