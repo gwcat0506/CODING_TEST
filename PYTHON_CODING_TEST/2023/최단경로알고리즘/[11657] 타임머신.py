@@ -1,40 +1,42 @@
 import sys
+
+INF = sys.maxsize
 input = sys.stdin.readline
 
-N, M = map(int,input().split())
+n,m = map(int,input().split())
 edge = []
-INF = sys.maxsize
-distance = [INF for _ in range(N+1)]
+graph = [INF for _ in range(n+1)]
 
-for _ in range(M):
-    A, B, C = map(int,input().split())
-    edge.append((A,B,C))
+for _ in range(m):
+    start,end,weight = map(int,input().split())
+    edge.append((start,end,weight))
+    
 
-def func(start):
-    distance[start] = 0
-    for i in range(N):
-        for j in range(M):
-            cur_node = edge[j][0]
-            end_node = edge[j][1]
-            weight = edge[j][2]
+def Bellman_Ford(start):
+    
+    graph[start]=0
+    for i in range(n):
+        for start_node,end_node,weight in edge:
+            
+            if graph[start_node]!=INF and graph[end_node] > graph[start_node]+weight:
+                
+                # 음의 사이클 존재 check
+                if i == n-1:
+                    return -1
+                graph[end_node] = graph[start_node] + weight        
+    return graph
+    
+    
+ans = Bellman_Ford(1)
 
-
-            if distance[cur_node] != INF and distance[end_node] > distance[cur_node] + weight:
-                distance[end_node] = distance[cur_node] + weight
-
-                if i == N-1:
-                    return False
-
-    return True
-
-flag = func(1)
-
-if flag == False:
+if ans == -1:
     print(-1)
 
 else:
-    for i in range(2,N+1):
-        if distance[i] == INF:
+    for i in range(2,n+1):
+        if ans[i]==INF:
             print(-1)
         else:
-            print(distance[i])
+            print(ans[i])
+    # print(graph)
+    
