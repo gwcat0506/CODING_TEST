@@ -1,6 +1,6 @@
 
 # 음의 사이클을 check하는 문제 
-# pypy로 제출해야 정답임 
+ 
 import sys
 INF = 10001
 input = sys.stdin.readline
