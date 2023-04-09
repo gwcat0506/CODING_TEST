@@ -1,0 +1,7 @@
+-- oracle 풀이
+-- https://school.programmers.co.kr/learn/courses/30/lessons/144853
+
+SELECT BOOK_ID, TO_CHAR(PUBLISHED_DATE,'YYYY-MM-DD') PUBLICHED_DATE
+FROM BOOK
+WHERE CATEGORY = '인문' AND TO_CHAR(PUBLISHED_DATE,'YYYY')='2021'
+ORDER BY PUBLISHED_DATE ASC;
