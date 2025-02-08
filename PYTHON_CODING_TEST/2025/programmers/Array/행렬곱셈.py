@@ -6,7 +6,9 @@
 def solution(arr1, arr2):
     answer = []
     
-    # arr2의 열을 미리 전치 행렬로 변환( 배열에 *를 붙이면 됨)
+    # arr2의 열을 미리 전치 행렬로 변환
+    # 1. 배열에 *를 붙이면 됨
+    # 2. zip() 함수는 같은 위치의 요소들을 튜플로 묶어 반환
     transposed_arr2 = list(zip(*arr2))
     
     for row in arr1:
